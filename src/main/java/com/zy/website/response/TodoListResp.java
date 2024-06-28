@@ -5,10 +5,12 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @ApiModel(value = "待办列表")
-public class TodoListResp {
+public class TodoListResp implements Serializable {
 
     @ApiModelProperty(value = "待办id")
     private Long id;

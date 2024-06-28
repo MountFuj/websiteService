@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 public class RedisUtils {
 
     @Autowired
-    RedisTemplate<String,Object> redisTemplate;
+    RedisTemplate<String,String> redisTemplate;
 
     /**
      * 设置key
      * @param key
      * @param value
      */
-    public  void setKey(String key,Object value){
+    public  void setKey(String key,String value){
         redisTemplate.opsForValue().set(key,value);
     }
     /**
@@ -23,7 +23,7 @@ public class RedisUtils {
      * @param key
      * @return
      */
-    public Object getKey(String key){
+    public String getKey(String key){
         return redisTemplate.opsForValue().get(key);
     }
 }
